@@ -1,0 +1,171 @@
+﻿@model LoginViewModel
+
+@{
+    ViewBag.Title = "User Login";
+}
+@*<form method="post">*@
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card text-center" style="min-height:300px;">
+              <div class="card-header">
+                <h1>Log In</h1>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group row">
+                                <label asp-for="LoginType" class="col-sm-2 col-form-label"></label>
+                                <div class="col-sm-6">
+                                    <select asp-for="LoginType" class="custom-select mr-sm-2" asp-items="Html.GetEnumSelectList<LoginType>()" >
+                                        @*<option selected ="selected" value="">Please Select</option>*@
+                                    </select>
+                                    <span asp-validation-for="LoginType" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div id="website">
+                                <form method="post">
+                                    <div asp-validation-summary="All" class="text-danger"></div>
+                                    <div class="form-group row">
+                                            <label asp-for="Email" class="col-sm-2 col-form-label"></label>
+                                            <div class="col-sm-6">
+                                                <input asp-for="Email" class="form-control" />
+                                            </div>
+                                            <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group row">
+                                            <label asp-for="Password" class="col-sm-2 col-form-label"></label>
+                                            <div class="col-sm-6">
+                                                <input asp-for="Password" class="form-control" />
+                                            </div>
+                                            <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label"></label>
+                                        <div class="col-sm-2 text-left">
+                                            <div class="checkbox">
+                                            <label asp-for="RememberMe">
+                                                <input asp-for="RememberMe" />
+                                                @Html.DisplayNameFor(m => m.RememberMe)
+                                            </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Log in</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id="skyward">
+                                <form method="post">
+                                    <div asp-validation-summary="All" class="text-danger"></div>
+                                    <div class="form-group row">
+                                            <label asp-for="UserName" class="col-sm-2 col-form-label"></label>
+                                            <div class="col-sm-6">
+                                                <input asp-for="UserName" class="form-control" />
+                                            </div>
+                                            <span asp-validation-for="UserName" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group row">
+                                            <label asp-for="Password" class="col-sm-2 col-form-label"></label>
+                                            <div class="col-sm-6">
+                                                <input asp-for="Password" class="form-control" />
+                                            </div>
+                                            <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label"></label>
+                                        <div class="col-sm-2 text-left">
+                                            <div class="checkbox">
+                                            <label asp-for="RememberMe">
+                                                <input asp-for="RememberMe" />
+                                                @Html.DisplayNameFor(m => m.RememberMe)
+                                            </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Log in</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                        </div>
+                    </div>
+                </p>
+              </div>
+              @*<div class="card-footer text-muted">
+                
+              </div>*@
+            </div>
+        </div>
+    </div>
+@*</form>*@
+
+    @*<div class="col-md-6">
+        <h1>External Login</h1>
+        <hr />
+        @{
+            if (Model.ExternalLogins.Count == 0)
+            {
+                <div>No external logins configured</div>
+            }
+            else
+            {
+                <form method="post" asp-action="ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl">
+                    <div>
+                        @foreach (var provider in Model.ExternalLogins)
+                        {
+                            <button type="submit" class="btn btn-primary"
+                                    name="provider" value="@provider.Name"
+                                    title="Log in using your @provider.DisplayName account">
+                                @provider.DisplayName
+                            </button>
+                        }
+                    </div>
+                </form>
+            }
+        }
+    </div>*@
+@section Scripts {
+    <script type="text/javascript">
+            $(document).ready(function () {
+                $("#website").show();
+                $("#skyward").hide();
+                $("#LoginType").change(function () {
+                    if(this.value == 0)
+                    {
+                        $("#website").show();
+                        $("#skyward").hide();
+                    }
+                    if(this.value == 1)
+                    {
+                        $("#website").hide();
+                        $("#skyward").show();
+                    }
+                    if (this.value == 3)
+                    {
+                        alert("I am here")
+                        var formData = new FormData();
+                        formData.append("provider", "Google");
+                        formData.append("returnUrl", "");
+                        $.ajax({
+                            type: 'POST',
+                            url: '/Account/ExternalLogin',
+                            data: formData,
+                            processData: false,
+                            contentType: false
+                        }).done(function (response) {
+                            if (response.Status === "success") {
+                                //alert("Success");
+                            }
+                        });
+                    }
+                });
+            });
+    </script>
+}

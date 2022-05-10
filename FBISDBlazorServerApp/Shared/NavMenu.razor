@@ -1,0 +1,73 @@
+﻿<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light border-bottom box-shadow mb-3">
+    <a class="navbar-brand" href="http://www.fortbendisd.com"><img id="fb-logo-image" src="/images/FBISD-logo.png" title='FBISD Home' class="brand"></a>
+    <div class="@NavMenuCssClass navbar-collapse d-sm-inline-flex flex-sm-row-reverse" @onclick="CollapseNavMenu">
+        <ul class="navbar-nav flex-grow-1">
+
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="" Match="NavLinkMatch.All">Home</a>
+            </li>
+            <AuthorizeView>
+                <Authorized>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="counter">Counter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="fetchdata">Fetch data</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="EmployeeList">Employee List</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link text-dark" href="/editemployee" @onclick="HandleClick" Match="NavLinkMatch.All">
+                            Create
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link text-dark" href="/editemployee/1" Match="NavLinkMatch.All">
+                            Edit
+                        </NavLink>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item text-dark" href="#">Action</a>
+                            <a class="dropdown-item text-dark" href="#">Another action</a>
+                            <a class="dropdown-item text-dark" href="#">Something</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-dark" href="#">Separated link</a>
+                        </div>
+                    </li>
+                </Authorized>
+            </AuthorizeView>
+        </ul>
+    </div>
+    <div class="top-row px-4 auth float-right">
+        <LoginDisplay />
+    </div>
+</nav>
+
+
+@code
+{
+    @inject NavigationManager NavigationManager;
+    
+    bool collapseNavMenu = true;
+
+    string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    void CollapseNavMenu()
+    {
+        collapseNavMenu = true;
+    }
+
+
+    private void HandleClick()
+    {
+        NavigationManager.NavigateTo("editemployee", true);
+    }
+}

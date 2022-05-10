@@ -11,6 +11,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreMVC", "AspNetCore
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authn", "Authn\Authn.csproj", "{E3CB1F23-2AE5-4C90-B7B1-62EB52ADB0C9}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor-Top-Menu", "Blazor-Top-Menu\Blazor-Top-Menu.csproj", "{FA9E8BB4-CB76-4137-8137-D5E13987815E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWASMAuth.Client", "BlazorWASMAuth\Client\BlazorWASMAuth.Client.csproj", "{BDCA9D42-162A-4F57-B6DF-D6BF78396DDF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWASMAuth.Server", "BlazorWASMAuth\Server\BlazorWASMAuth.Server.csproj", "{EF8D5409-A235-493B-81F3-66357BA10FFC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWASMAuth.Shared", "BlazorWASMAuth\Shared\BlazorWASMAuth.Shared.csproj", "{DD51006C-38BC-4B89-80BB-1E4F855712A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +41,22 @@ Global
 		{E3CB1F23-2AE5-4C90-B7B1-62EB52ADB0C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3CB1F23-2AE5-4C90-B7B1-62EB52ADB0C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3CB1F23-2AE5-4C90-B7B1-62EB52ADB0C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA9E8BB4-CB76-4137-8137-D5E13987815E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA9E8BB4-CB76-4137-8137-D5E13987815E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA9E8BB4-CB76-4137-8137-D5E13987815E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA9E8BB4-CB76-4137-8137-D5E13987815E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDCA9D42-162A-4F57-B6DF-D6BF78396DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDCA9D42-162A-4F57-B6DF-D6BF78396DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDCA9D42-162A-4F57-B6DF-D6BF78396DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDCA9D42-162A-4F57-B6DF-D6BF78396DDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF8D5409-A235-493B-81F3-66357BA10FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF8D5409-A235-493B-81F3-66357BA10FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF8D5409-A235-493B-81F3-66357BA10FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF8D5409-A235-493B-81F3-66357BA10FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD51006C-38BC-4B89-80BB-1E4F855712A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD51006C-38BC-4B89-80BB-1E4F855712A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD51006C-38BC-4B89-80BB-1E4F855712A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD51006C-38BC-4B89-80BB-1E4F855712A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

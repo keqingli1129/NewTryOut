@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactNETCOREBackEnd", "ReactNETCOREBackEnd\ReactNETCOREBackEnd.csproj", "{FBDB4FB0-87B8-4C61-B15D-6105C63C922C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBDB4FB0-87B8-4C61-B15D-6105C63C922C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBDB4FB0-87B8-4C61-B15D-6105C63C922C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBDB4FB0-87B8-4C61-B15D-6105C63C922C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBDB4FB0-87B8-4C61-B15D-6105C63C922C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D3620FC-EE7A-42F3-8950-462EB7F8D2A1}
+	EndGlobalSection
+EndGlobal
